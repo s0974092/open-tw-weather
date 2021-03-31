@@ -47,9 +47,9 @@ app.get('/now', async (req, res) => {
                 return
             }
         })
-        Object.keys(result).length !== 0 ? res.send(result) : res.send('{stateCode: 403, message: "找無此城市，請重新輸入！"}')
+        Object.keys(result).length !== 0 ? res.json(result): res.json({stateCode: 403, message: "找無此城市，請重新輸入！"})
     } else {
-        res.send('{stateCode: 403, message: "請輸入合法參數！"}')
+        res.json({stateCode: 403, message: "請輸入合法參數！"})
     }
 })
 
